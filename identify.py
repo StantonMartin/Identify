@@ -32,10 +32,15 @@ table12 = dfs[11].dropna();
 
 print (table1["Short\rName"]);
 #print (dfs[0]);
-
+i=1;
 for table in dfs:
-    #print (table)
-    pass
+    table.columns = table.iloc[0]
+    table = table.reindex(table.index.drop(0)).reset_index(drop=True)
+    table.columns.name = None
+#To write CSV
+    table.to_csv('MCD12Q1_table'+str(i)+'.csv',sep=',',header=True,index=False)
+    i=i+1
+# pass
 #lat = sys.argv[1];
 
 #long = sys.argv[2];
