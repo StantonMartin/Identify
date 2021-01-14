@@ -30,15 +30,27 @@ table11 = dfs[10].dropna();
 table12 = dfs[11].dropna();
 
 
-print (table1["Short\rName"]);
-#print (dfs[0]);
+#print (table1["Short\rName"]);
+#Append the LW since we missed reading it
+table1.loc[len(table1.index)]=['Land Water Mask', 'LW', 'Binary land (class 2) / water(class 1) mask derived fromMOD44W', 'Class#', '8-bit unsigned', '[1,2]', '255'];
+table3.loc[len(table3.index)]=['Unclassified', '255', 'Has not recieved a map label because of missing inputs'];
+#table1.set_options('display.max_columns', None);
+table1.columns = table1.columns.str.strip().str.lower().str.replace('\r','_');
+
+table1.set_index('short_name', inplace = True);
+
+table1.index = table1.index.str.strip().str.replace(' ','_');
+#Fix the Ass
+table1.index = table1.index.str.replace('_Ass','_Assessment');
+#print(dfs[2]);
+#print(table3);
 i=1;
 for table in dfs:
     table.columns = table.iloc[0]
     table = table.reindex(table.index.drop(0)).reset_index(drop=True)
     table.columns.name = None
 #To write CSV
-    table.to_csv('MCD12Q1_table'+str(i)+'.csv',sep=',',header=True,index=False)
+    #table.to_csv('MCD12Q1_table'+str(i)+'.csv',sep=',',header=True,index=False)
     i=i+1
 # pass
 #lat = sys.argv[1];
@@ -94,21 +106,34 @@ def getModisDates(dateStart, dateEnd):
 modisDateQuery = getModisDates(dateStart,dateEnd)
 #print(modisDateQuery)
 
+def IGBP(data):
+    if (len(data) ==1):
+        val =(data[0]);
+        N = table3['Name'][table3.Value == val];
+        D = table3['Description'][table3.Value == val];
+        N = N.tolist();
+        D = D.tolist();
+        return(N[0],D[0]);
+
+
 
 def get_landcover(lat,long,modisDateQuery):
 
     query = modis_base+'MCD12Q1/subset?latitude='+lat+'&longitude='+long+modisDateQuery+'&kmAboveBelow=0&kmLeftRight=0';
-    print (query);
+    #print (query);
     response = requests.get(query, headers=header)
     if response.status_code == 200:
         res = json.loads(response.content.decode('utf-8'))
         subset = res["subset"]
         for x in subset:
             band = x["band"].strip();
-            band = band.replace('_',' ');
-            print(band);
-            ClassificationType = table1["Description"][table1["Short\rName"][0] == band];
-            print (ClassificationType[0]);
+            data = x["data"];
+            #print(band);
+            ClassificationType = table1['description'][table1.index == band];
+            CL =(ClassificationType[band]);
+            if "IGBP" in CL:
+                IGB = IGBP(data);
+                return(IGB, CL);
             #data = data[0]
             #print (band)
             #
@@ -118,7 +143,7 @@ def get_landcover(lat,long,modisDateQuery):
         return response.status_code
 
 landcover =  get_landcover(lat,long,modisDateQuery);
-#print (landcover)
+print (landcover)
 
 def get_daymet(lat,long,dateStart,dateEnd):
     query = 'https://daymet.ornl.gov/single-pixel/api/data?lat=45.833493&lon=-119.561634&vars=&format=json';
@@ -128,5 +153,5 @@ def get_daymet(lat,long,dateStart,dateEnd):
     else:
         return None
 
-daymet = get_daymet(lat,long,dateStart,dateEnd)
+#daymet = get_daymet(lat,long,dateStart,dateEnd)
 #print(daymet);
