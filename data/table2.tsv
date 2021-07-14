@@ -1,0 +1,10 @@
+Full_SDS_name	Short_Name	Description	Unit	Data_Type	Valid_range	Fill_Value
+Majority Land Cover Type 1	MLCT_1	Most likely IGBP class for each 0.05 degree pixel	Class value	8-bit unsigned integer	[0,16]	255
+Majority Land Cover Type 1 Assessment	MLCT_1_A	Majority IGBP class confidence	Percent x 100	8-bit unsigned integer	[0,100]	255
+Majority Land Cover Type 1 Percent	LCT_1_P	Percent cover of each IGBP class at each pixel	Percent x 100	8-bit unsigned integer	[0,100]	255
+Majority Land Cover Type 2	MLCT_2	Most likely UMD class for each 0.05 degree pixel	Class value	8-bit unsigned integer	[0,15]	255
+Majority Land Cover Type 2 Assessment	MLCT_2_A	Majority UMD class confidence (filled withland/water mask)	Percent x 100	8-bit unsigned integer	[0,100]	255
+Majority Land Cover Type 2 Percent	LCT_2_P	Percent cover of each UMD class at each pixel	Percent x 100	8-bit unsigned integer	[0,100]	255
+Majority Land Cover Type 3	MLCT_3	Most likely LAI class for each 0.05 degree pixel	Class value	8-bit unsigned integer	[0,10]	255
+Majority Land Cover Type 3 Assessment	MLCT_3_A	Majority LAI class confidence (filled withland/water mask)	Percent x 100	8-bit unsigned integer	[0,100]	255
+Majority Land Cover Type 3 Percent	LCT_3_P	Percent cover of each LAI class at each pixel	Percent x 100	8-bit unsigned integer	[0,100]	255
