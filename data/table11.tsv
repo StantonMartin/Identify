@@ -1,0 +1,12 @@
+Name	Value	Description
+Classified land	0	Has a classification label and is land according to the water mask.
+Unclassified land	1	Not classified because of missing data but land according to the water mask, labeled as barren.
+Classified water	2	Has a classification label and is water according to the water mask.
+Unclassified water	3	Not classified because of missing data but water according to the water mask.
+Classified sea ice	4	Classified as snow/ice but water mask says it is water and less than 100m elevation, switched to water.
+Misclassified water	5	Classified as water but water mask says it is land, switched to secondary label.
+Omitted snow/ice	6	Land according to the water mask that was classified as something other than snow but with a maximum annual temperature below 1°C, relabeled as snow/ice.
+Misclassified snow/ice	7	Land according to the water mask that was classified as snow but with a minimum annual temperature greater than 1°C, relabeled as barren.
+Backfilled label	8	Missing label from stabilization, filled with the pre-stabilized result.
+Forest type changed	9	Climate-based change to forest class.
+No data	10	Missing label from the water mask.

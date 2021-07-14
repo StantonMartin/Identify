@@ -1,0 +1,14 @@
+Name	Value	Description
+Water Bodies	0	At least 60% of area is covered by permanent water bodies.
+Evergreen Needleleaf Trees	1	Dominated by evergreen conifer trees (>2m). Tree cover >10%.
+Evergreen Broadleaf Trees	2	Dominated by evergreen broadleaf and palmate trees (>2m). Tree cover >10%.
+Deciduous Needleleaf Trees	3	Dominated by deciduous needleleaf (larch) trees (>2m). Tree cover >10%.
+Deciduous Broadleaf Trees	4	Dominated by deciduous broadleaf trees (>2m). Tree cover >10%.
+Shrub	5	Shrub (1-2m) cover >10%.
+Grass	6	Dominated by herbaceous annuals (<2m) that are not cultivated.
+Cereal Croplands	7	Dominated by herbaceous annuals (<2m). At least 60% cultivated cereal crops.
+Broadleaf Croplands	8	Dominated by herbaceous annuals (<2m). At least 60% cultivated broadleaf crops.
+Urban and Built-up Lands	9	At least 30% impervious surface area including building materials, asphalt, and vehicles.
+Permanent Snow and Ice	10	At least 60% of area is covered by snow and ice for at least 10 months of the year.
+Barren	11	At least 60% of area is non-vegetated barren (sand, rock, soil) with less than 10% vegetation.
+Unclassified	255	Has not received a map label because of missing inputs.

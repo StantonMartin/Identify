@@ -48,6 +48,8 @@ d = {
 'Fill_Value': ['255', '255', '255', '255', '255', '255', '255', '255', '255',
           '255', '255', '255', '255']}
 table1 = pd.DataFrame(data=d)
+table1.to_csv('data/table1.tsv', sep='\t', index=False)
+table1.to_csv('t1.tsv', sep='\t', index=False)
 
 # MCD12C1 Science Data Sets
 d = {
@@ -84,6 +86,7 @@ d = {
                 '[0,10]', '[0,100]', '[0,100]'], 
 'Fill_Value': ['255', '255', '255', '255', '255', '255', '255', '255', '255']}
 table2 = pd.DataFrame(data=d)
+table2.to_csv('data/table2.tsv', sep='\t', index=False)
 
 # MCD12Q1 International Geosphere-Biosphere Programme (IGBP) legend and class 
 # descriptions
@@ -126,6 +129,7 @@ d = {
                 'At least 60% of area is covered by permanent water bodies.',
                 'Has not received a map label because of missing inputs.']}
 table3 = pd.DataFrame(data=d)
+table3.to_csv('data/table3.tsv', sep='\t', index=False)
 
 # University of Maryland (UMD) legend and class definitions.
 d = {
@@ -167,6 +171,7 @@ d = {
                 'vegetation.',
                 'Has not received a map label because of missing inputs.']}
 table4 = pd.DataFrame(data=d)
+table4.to_csv('data/table4.tsv', sep='\t', index=False)
 
 # Leaf Area Index (LAI) legend and class definitions.
 d = {
@@ -197,6 +202,7 @@ d = {
                 'materials, asphalt, and vehicles.',
                 'Has not received a map label because of missing inputs.']}
 table5 = pd.DataFrame(data=d)
+table5.to_csv('data/table5.tsv', sep='\t', index=False)
 
 
 # BIOME-Biogeochemical Cycles (BGC) legend and class definitions.
@@ -226,6 +232,7 @@ d = {
                 'materials, asphalt, and vehicles.',
                 'Has not received a map label because of missing inputs.']}
 table6 = pd.DataFrame(data=d)
+table6.to_csv('data/table6.tsv', sep='\t', index=False)
 
 # Plant Functional Types (PFT) legend and class denitions.
 d = {
@@ -258,6 +265,7 @@ d = {
                 'soil) with less than 10% vegetation.',
                 'Has not received a map label because of missing inputs.']}
 table7 = pd.DataFrame(data=d)
+table7.to_csv('data/table7.tsv', sep='\t', index=False)
 
 # FAO-Land Cover Classification System land cover (LCCS1) legend and class 
 # definitions.
@@ -299,6 +307,7 @@ d = {
                 'minimal herbaceous understory.',
                 'Has not received a map label because of missing inputs.']}
 table8 = pd.DataFrame(data=d)
+table8.to_csv('data/table8.tsv', sep='\t', index=False)
 
 # FAO-Land Cover Classification System land use (LCCS2) legend and class 
 # definitions.
@@ -328,6 +337,7 @@ d = {
                 'Shrub cover >60% (1-2m).',
                 'Has not received a map label because of missing inputs.']}
 table9 = pd.DataFrame(data=d)
+table9.to_csv('data/table9.tsv', sep='\t', index=False)
 
 # FAO-Land Cover Classification System surface hydrology (LCCS3) legend and 
 # class descriptions.
@@ -353,6 +363,7 @@ d = {
                 'year.',
                 'Has not received a map label because of missing inputs.']}
 table10 = pd.DataFrame(data=d)
+table10.to_csv('data/table10.tsv', sep='\t', index=False)
 
 # Quality Assurance (QA) legend and class descriptions.
 d = {
@@ -384,6 +395,7 @@ d = {
                 'Climate-based change to forest class.',
                 'Missing label from the water mask.']}
 table11 = pd.DataFrame(data=d)
+table11.to_csv('data/table11.tsv', sep='\t', index=False)
 
 # MCD12C1 International Geosphere-Biosphere Programme (IGBP) legend and class
 # descriptions.
@@ -429,6 +441,7 @@ d = {
                 'soil) areas with less than 10% vegetation.',
                 'Has not received a map label because of missing inputs.']}
 table12 = pd.DataFrame(data=d)
+table12.to_csv('data/table12.tsv', sep='\t', index=False)
 
 #put dataframes in an array and return array
 def MCD12_user_guide():

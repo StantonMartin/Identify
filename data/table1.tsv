@@ -1,0 +1,14 @@
+SDS_Full_Name	Short_Name	Description	Units	Data_Type	Valid_Range	Fill_Value
+Land Cover Type 1	LC_Type1	Annual IGBP classification	Class #	8-bit unsigned	[1,17]	255
+Land Cover Type 2	LC_Type2	Annual UMD classification	Class #	8-bit unsigned	[0,15]	255
+Land Cover Type 3	LC_Type3	Annual LAI classification	Class #	8-bit unsigned	[0,10]	255
+Land Cover Type 4	LC_Type4	Annual BGC classification	Class #	8-bit unsigned	[0,8]	255
+Land Cover Type 5	LC_Type5	Annual PFT classification	Class #	8-bit unsigned	[0,11]	255
+Land Cover Property 1	LC_Prop1	LCCS1 land cover layer	Class #	8-bit unsigned	[1,43]	255
+Land Cover Property 2	LC_Prop2	LCCS2 land use layer	Class #	8-bit unsigned	[1,40]	255
+Land Cover Property 3	LC_Prop3	LCCS3 surface hydrology layer	Class #	8-bit unsigned	[1,51]	255
+Land Cover Property 1 Assessment	LC_Prop1_Assessment	LCCS1 land cover layer confidence	Percent x 100	8-bit unsigned	[0,100]	255
+Land Cover Property 2 Assessment	LC_Prop2_Assessment	LCCS2 land use layer confidence	Percent x 100	8-bit unsigned	[0,100]	255
+Land Cover Property 3 Assessment	LC_Prop3_Assessment	LCCS3 surface hydrology layer confidence	Percent x 100	8-bit unsigned	[0,100]	255
+Land Cover QC	QC	Product quality flags	Flags	8-bit unsigned	[0,10]	255
+Land Water Mask	LW	Binary land (class 2) / water (class 1) mask derived from MOD44W	Class #	8-bit unsigned	[1,2]	255
